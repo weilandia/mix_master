@@ -7,7 +7,7 @@ RSpec.feature "User deletes an existing artist" do
     visit artist_path(artist)
     click_on "Delete"
 
-    expect(page).to have_content artist.name
+    expect(page).to_not have_content artist.name
     expect(page).to_not have_css("img[src=\"#{artist.image_path}\"]")
   end
 end
